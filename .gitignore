@@ -1,0 +1,40 @@
+*.pyc
+# Byte-compiled and cached files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual Environment
+venv/
+env/
+*.env
+
+# Django-specific files
+db.sqlite3
+media/
+staticfiles/
+*.log
+
+# Migrations (optional, if you want to exclude)
+**/migrations/*
+
+# IDE/editor specific files
+.vscode/
+.idea/
+*.swp
+
+# Dependencies
+node_modules/
+
+# Secrets
+.env
+*.pem
+
+# Compiled files
+*.so
+*.dll
+*.dylib
+
+# OS-generated files
+.DS_Store
+Thumbs.db
