@@ -1,7 +1,7 @@
 {
     "_meta": {
         "hash": {
-            "sha256": "5974ff7791f14a38375a36c229ef1ed15a509dfe7d19b3c9e98646500e55509e"
+            "sha256": "cbb0872b36cf4028c49306f831e28b67e592da6be9ef43da2256ee9c25f05b1e"
         },
         "pipfile-spec": 6,
         "requires": {
@@ -306,6 +306,13 @@
             "markers": "python_version >= '3.8' and python_version < '4.0'",
             "version": "==2.3.1"
         },
+        "dotenv": {
+            "hashes": [
+                "sha256:29cf74a087b31dafdb5a446b6d7e11cbce8ed2741540e2339c69fbef92c94ce9"
+            ],
+            "index": "pypi",
+            "version": "==0.9.9"
+        },
         "drf-nested-routers": {
             "hashes": [
                 "sha256:2b846385ed95c9f17bf4242db3b264ac826b5af00dda6c737d3fe7cc7bf2c7db",
@@ -439,6 +446,14 @@
             ],
             "markers": "python_version >= '3.8'",
             "version": "==2.9.0"
+        },
+        "python-dotenv": {
+            "hashes": [
+                "sha256:e324ee90a023d808f1959c46bcbc04446a10ced277783dc6ee09987c37ec10ca",
+                "sha256:f7b63ef50f1b690dddf550d03497b66d609393b40b564ed0d674909a68ebf16a"
+            ],
+            "markers": "python_version >= '3.8'",
+            "version": "==1.0.1"
         },
         "python3-openid": {
             "hashes": [
