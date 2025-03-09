@@ -3,6 +3,7 @@ from django.db.models.aggregates import Count
 from django.db.models.query import QuerySet
 from django.utils.html import format_html, urlencode
 from django.urls import reverse
+from django.contrib.admin import TabularInline
 from . import models
 
 
@@ -19,6 +20,14 @@ class InventoryFilter(admin.SimpleListFilter):
         if self.value() == '<10':
             return queryset.filter(inventory__lt=10)
 
+class ProductImageInline(TabularInline):
+    model=models.ProductImage
+    readonly_fields=['thumbnail']
+
+    def thumbnail(self,instance):
+        if instance.image.name !='':
+            return format_html (f'<img src="{instance.image.url}" class="thumbnail"/>')
+        return ''
 
 @admin.register(models.Product)
 class ProductAdmin(admin.ModelAdmin):
@@ -32,6 +41,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_editable = ['unit_price']
     list_filter = ['collection', 'last_update', InventoryFilter]
     list_per_page = 10
+    inlines=[ProductImageInline]
     list_select_related = ['collection']
     search_fields = ['title']
 
@@ -52,6 +62,10 @@ class ProductAdmin(admin.ModelAdmin):
             f'{updated_count} products were successfully updated.',
             messages.ERROR
         )
+    class Media:
+        css={
+            'all':['style.css']
+        }
 
 
 @admin.register(models.Collection)
